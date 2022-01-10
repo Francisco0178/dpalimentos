@@ -120,10 +120,9 @@ def runCode(request):
     
     fh.seek(0)
     
-    downloads_path = "../downloads"
+    #downloads_path = str(Path.home() / "Downloads")
 
-
-    with open(os.path.join(downloads_path, file_name), 'wb') as f:
+    with open(os.path.join('./downloads', file_name), 'wb') as f:
         f.write(fh.read())
         f.close()
     
