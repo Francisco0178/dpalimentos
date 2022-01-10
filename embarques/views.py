@@ -120,7 +120,7 @@ def runCode(request):
     
     fh.seek(0)
     
-    downloads_path = "/home/fbahamondes96/downloads"
+    downloads_path = "../downloads"
 
 
     with open(os.path.join(downloads_path, file_name), 'wb') as f:
