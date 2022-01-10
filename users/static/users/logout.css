@@ -1,0 +1,29 @@
+.logoutCtr {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logoutCtr h2 {
+    font-size: 3rem;
+}
+
+
+
+
+
+
+@media (max-width:768px){
+
+    .logoutCtr{
+        padding-bottom: 14rem;
+    }
+
+    .logoutCtr h2, a{
+        font-size: 2rem;
+    }
+
+}
+

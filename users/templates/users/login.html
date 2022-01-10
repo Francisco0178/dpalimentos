@@ -1,0 +1,20 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+    <div class="loginCtr">
+        <div class="logodp"><img src="../../static/img/logodp.jpg" alt=""></div>
+        <div class="formulario">
+
+            <form method="POST">
+                {% csrf_token %}
+                <center><fieldset>
+                    {{ form.as_p }}
+                </fieldset></center>
+                <div class="loginBtn">
+                    <button>Login</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock content %}

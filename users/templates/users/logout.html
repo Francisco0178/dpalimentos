@@ -1,0 +1,12 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+<div class="logoutCtr">
+    <h2>Ha salido del sitio</h2>        
+    <div class="border-top pt-3" style="text-align: center;">
+        <small class="text-muted" style="font-size: 3rem;">
+            <a class="ml-2" href="{% url 'login' %}">Ingresar de nuevo</a>
+        </small>
+    </div>
+</div>
+{% endblock content %}

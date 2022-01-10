@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Gestor Embarques App</title>
+    {% endif %}
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{% static 'embarques/main.css' %}">
+    <link rel="stylesheet" href="{% static 'embarques/embarque.css' %}">
+    <link rel="stylesheet" href="{% static 'embarques/perfil.css' %}">
+    
+    <!-- leafletjs -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!-- CDN de swiperjs -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- CDN Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    {% if title == "Embarque" or title == "Perfil" or title == "Historial" %}
+        <div class="navbar">
+            <a href="../"><div id="user" class="fas fa-arrow-left"></div></a>
+            <a href="/perfil"><div id="user" class="fas fa-user"></div></a>
+        </div>
+    {% else %}
+        <div class="navbar">
+            <div id="menu" class="fas fa-bars" onclick="abreMenu()"></div>
+            <a href="/"><img src="../../static/embarques/assets/worldwide-shipping.png" alt=""></a>
+            <a href="/perfil"><div id="user" class="fas fa-user"></div></a>
+        </div>
+    {% endif %}
+
+    <div id="sidemenu" class="side-menu">
+        <h1 class="fas fa-times" onclick="cierraMenu()"></h1>
+        <div class="enlaces">
+            <a href="/perfil" class="icon perfil">Perfil</a>
+            <a href="" class="icon home">Principal</a>
+            <a href="/historial" class="icon historial">Historial</a>
+            <a href="/logout" class="icon logout">Cerrar Sesión</a>
+        </div>
+    </div>
+    
+    {% block content %}
+    {% endblock %}
+
+    <div class="navbar_end">
+        <a href= "../"><i class="material-icons" style="font-size: 50px;color:white">home</i></a>
+        <a href= "/historial"><i class="material-icons" style="font-size: 50px;color:white">assignment</i></a>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then SwiperJs -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{% static 'embarques/scripts.js' %}"></script>
+</body>
+</html>

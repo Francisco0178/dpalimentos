@@ -1,0 +1,149 @@
+
+{% extends "embarques/base.html" %}
+{% block content %}
+{% load humanize %}
+    
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2 style="text-align: center; padding-bottom: 1rem;">Embarques en Tránsito</h2>
+                <table class="table table-hover tablaEmbarques">
+                    <thead class="text-center">
+                        <tr>
+                            <th>STATUS</th>
+                            <th class="collapsable">PROVEEDOR</th>
+                            <th class="collapsable">CTR N°</th>
+                            <th>PRODUCTO</th>
+                            <th class="collapsable">CANTIDAD</th>
+                            <th class="collapsable">UM</th>
+                            <th class="collapsable">PALETIZADA</th>
+                            <th class="collapsable">TIPO</th>
+                            <th class="collapsable">ETA</th>
+                            <th class="collapsable">RETIRO</th>
+                            <th class="collapsable">HORA</th>
+                            <th class="collapsable">SIGLA CTR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for embarque in embarques %}
+                            {% if embarque.status == "En Tránsito" %}
+                                <tr onclick=enviarId({{ embarque.id }})>
+                                    <td><div class="status" id="en_transito">{{ embarque.status }}</div></td>    
+                                    <td class="collapsable">{{ embarque.proveedor }}</td>
+                                    <td class="collapsable">{{ embarque.ctr }}</td>
+                                    <td>{{ embarque.producto }}</td>
+                                    <td class="collapsable">{{ embarque.cantidad|intcomma }}</td>
+                                    <td class="collapsable">{{ embarque.um }}</td>
+                                    <td class="collapsable">{{ embarque.carga }}</td>
+                                    <td class="collapsable">{{ embarque.tipo }}</td>
+                                    <td class="collapsable">{{ embarque.eta }}</td>
+                                    <td class="collapsable">{{ embarque.retiro }}</td>
+                                    <td class="collapsable">{{ embarque.hora }}</td>
+                                    <td class="collapsable">{{ embarque.siglaCtr }}</td>
+                                </tr>
+                            {% endif %}    
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="swiper-slide">
+                <h2 style="text-align: center; padding-bottom: 1rem;">Embarques Provisionados</h2>
+                <table class="table table-hover tablaEmbarques">
+                    <thead class="text-center">
+                        <tr>
+                            <th>STATUS</th>
+                            <th class="collapsable">PROVEEDOR</th>
+                            <th class="collapsable">CTR N°</th>
+                            <th>PRODUCTO</th>
+                            <th class="collapsable">CANTIDAD</th>
+                            <th class="collapsable">UM</th>
+                            <th class="collapsable">PALETIZADA</th>
+                            <th class="collapsable">TIPO</th>
+                            <th class="collapsable">ETA</th>
+                            <th class="collapsable">RETIRO</th>
+                            <th class="collapsable">HORA</th>
+                            <th class="collapsable">SIGLA CTR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for embarque in embarques %}
+                            {% if embarque.status == "Provisionado" %}
+                                <tr onclick=enviarId({{ embarque.id }})>
+                                    <td><div class="status" id="provisionado">{{embarque.status}}</div></td>    
+                                    <td class="collapsable">{{ embarque.proveedor }}</td>
+                                    <td class="collapsable">{{ embarque.ctr }}</td>
+                                    <td>{{ embarque.producto }}</td>
+                                    <td class="collapsable">{{ embarque.cantidad|intcomma }}</td>
+                                    <td class="collapsable">{{ embarque.um }}</td>
+                                    <td class="collapsable">{{ embarque.carga }}</td>
+                                    <td class="collapsable">{{ embarque.tipo }}</td>
+                                    <td class="collapsable">{{ embarque.eta }}</td>
+                                    <td class="collapsable">{{ embarque.retiro }}</td>
+                                    <td class="collapsable">{{ embarque.hora }}</td>
+                                    <td class="collapsable">{{ embarque.siglaCtr }}</td>
+                                </tr>
+                            {% endif %}    
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="swiper-slide">
+                <h2 style="text-align: center; padding-bottom: 1rem;">Embarques arribados a bodega</h2>
+                <table class="table table-hover tablaEmbarques">
+                    <thead class="text-center">
+                        <tr>
+                            <th>STATUS</th>
+                            <th class="collapsable">PROVEEDOR</th>
+                            <th class="collapsable">CTR N°</th>
+                            <th>PRODUCTO</th>
+                            <th class="collapsable">CANTIDAD</th>
+                            <th class="collapsable">UM</th>
+                            <th class="collapsable">PALETIZADA</th>
+                            <th class="collapsable">TIPO</th>
+                            <th class="collapsable">ETA</th>
+                            <th class="collapsable">RETIRO</th>
+                            <th class="collapsable">HORA</th>
+                            <th class="collapsable">SIGLA CTR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for embarque in embarques %}
+                            {% if embarque.status == "Ingresado" or embarque.status == "Pre-Ingresado" %}
+                                <tr onclick=enviarId({{ embarque.id }})>
+                                    {% if embarque.status == "Ingresado" %}
+                                        <td><div class="status" id="ingresado">{{ embarque.status }}</div></td>
+                                    {% else %}
+                                        <td><div class="status" id="pre_ingresado">{{ embarque.status }}</div></td>
+                                    {% endif %}  
+                                    <td class="collapsable">{{ embarque.proveedor }}</td>
+                                    <td class="collapsable">{{ embarque.ctr }}</td>
+                                    <td>{{ embarque.producto }}</td>
+                                    <td class="collapsable">{{ embarque.cantidad|intcomma }}</td>
+                                    <td class="collapsable">{{ embarque.um }}</td>
+                                    <td class="collapsable">{{ embarque.carga }}</td>
+                                    <td class="collapsable">{{ embarque.tipo }}</td>
+                                    <td class="collapsable">{{ embarque.eta }}</td>
+                                    <td class="collapsable">{{ embarque.retiro }}</td>
+                                    <td class="collapsable">{{ embarque.hora }}</td>
+                                    <td class="collapsable">{{ embarque.siglaCtr }}</td>
+                                </tr>
+                            {% endif %}    
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enviarId(id){
+            window.location.href = "/embarque?id="+id;
+        }
+
+        const swiper = new Swiper(".mySwiper", {});
+    
+    </script>
+    
+
+{% endblock content %}

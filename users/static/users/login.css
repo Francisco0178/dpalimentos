@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("../img/planta.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.loginCtr {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginCtr .formulario {
+    width: 90%;
+    display: block;
+    padding-bottom: 10rem;
+}
+
+.logodp {
+    text-align: center;
+}
+
+.logodp img {
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 3px 5px 37px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 5px 37px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 5px 37px -10px rgba(0,0,0,0.75);
+}
+
+.formulario form fieldset p {
+    display:flex;
+    flex-direction: column;
+    width: 25%;
+    padding: .8rem 0;
+}
+
+.formulario form fieldset p label {
+    font-size: 1.7rem;
+    padding-bottom: .3rem;
+    text-align: left !important;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.formulario form fieldset p input {
+    width: 100%;
+    font-size: 1.5rem;
+    height: 3rem;
+    padding-left: 1rem;
+    border-radius: 15px;
+    box-shadow: 0px 10px 32px 1px rgba(69,69,69,0.75);
+    -webkit-box-shadow: 0px 10px 32px 1px rgba(69,69,69,0.75);
+    -moz-box-shadow: 0px 10px 32px 1px rgba(69,69,69,0.75);
+}
+
+.formulario .loginBtn {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.formulario .loginBtn button {
+    font-size: 2rem;
+    padding: .2rem 3rem;
+    border-radius: 10px;
+    background: #fff;
+    text-transform:uppercase;
+    font-weight: bold;
+    color: #993400;
+}
+
+.formulario .loginBtn button:hover {
+    cursor: pointer;
+}
+
+
+/* dispositivos móviles */
+@media (max-width:768px){
+    .formulario form fieldset p {
+        width: 100%;
+    }
+
+    .formulario form fieldset p label {
+        font-size: 1rem;
+    }
+
+    .formulario form fieldset p input {
+        font-size: 1.5rem;
+    }
+
+    .logodp img {
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+

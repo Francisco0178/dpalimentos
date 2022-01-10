@@ -1,0 +1,53 @@
+{% extends "embarques/base.html"%}
+{%block content%}
+{% load humanize %}
+ 
+<h2 style="text-align: center; padding-bottom: 1rem;">Embarques Finalizados</h2>
+<table class="table table-striped tablaEmbarques">
+    <thead>
+        <tr>
+            <th>STATUS</th>
+            <th class="collapsable">PROVEEDOR</th>
+            <th class="collapsable">CTR</th>
+            <th>PRODUCTO</th>
+            <th class="collapsable">CANTIDAD</th>
+            <th class="collapsable">UM</th>
+            <th class="collapsable">CATEGORIA</th>
+            <th class="collapsable">CARGA</th>
+            <th class="collapsable">TIPO</th>
+            <th class="collapsable">ETA</th>
+            <th class="collapsable">RETIRO</th>
+            <th class="collapsable">HORA</th>
+            <th class="collapsable">SIGLA CTR</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for embarque in embarques %}
+            {%if embarque.status == "Finalizado"%}
+                <tr onclick=enviarId({{ embarque.id }})>
+                    <td><div class="status" id="finalizado">{{ embarque.status }}</div></td>
+                    <td class="collapsable">{{ embarque.proveedor }}</td>
+                    <td class="collapsable">{{ embarque.ctr }}</td>
+                    <td>{{ embarque.producto }}</td>
+                    <td class="collapsable">{{ embarque.cantidad }}</td>
+                    <td class="collapsable">{{ embarque.UM }}</td>
+                    <td class="collapsable">{{ embarque.categoria }}</td>
+                    <td class="collapsable">{{ embarque.carga }}</td>
+                    <td class="collapsable">{{ embarque.tipo }}</td>
+                    <td class="collapsable">{{ embarque.eta }}</td>
+                    <td class="collapsable">{{ embarque.retiro }}</td>
+                    <td class="collapsable">{{ embarque.hora }}</td>
+                    <td class="collapsable">{{ embarque.siglaCtr }}</td>
+                </tr>
+            {%endif%}
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    function enviarId(id){
+        window.location.href = "/embarque?id="+id;
+    }
+</script>
+
+{%endblock content%}

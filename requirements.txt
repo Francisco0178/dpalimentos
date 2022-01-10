@@ -1,0 +1,13 @@
+django
+djangorestframework
+gunicorn
+django-password-validators
+coverage
+selenium
+locust
+django-cors-headers
+mysql-connector
+mysqlclient
+gspread
+oauth2client
+google-api-python-client

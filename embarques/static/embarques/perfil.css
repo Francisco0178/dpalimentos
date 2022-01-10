@@ -1,0 +1,56 @@
+
+.perfil-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.perfil-section .media {
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil-section .media h2 {
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.perfil-section .media img{
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.perfil-section form legend {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 1rem;
+}
+
+.perfil-section form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.perfil-section form fieldset {
+    font-size: 2rem;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.perfil-section form fieldset span {
+    display: none;
+}
+
+.perfil-section form .form-group button {
+    margin-top: 4rem;
+    font-size: 3rem;
+}

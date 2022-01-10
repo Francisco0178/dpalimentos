@@ -1,0 +1,93 @@
+
+.embarque {
+    display: flex;
+    justify-content: center;
+}
+
+.embarque h1 {
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.embarque h2 {
+    font-size: 2.2rem;
+}
+
+.embarque .embstat {
+    text-align: center;
+    width:auto;
+    padding: 1rem;
+    font-size: 2.4rem;
+}
+
+.embarque .tableCtr {
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.embarque .tableProd {
+    font-size: 2rem;
+}
+
+.embarque .tableProd thead {
+    text-align: center;
+}
+
+.embarque .tableProd tbody tr td {
+    text-align: center;
+}
+
+.embarque .descargar {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 3rem;
+}
+
+.embarque .mapCtr {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#provisionado {
+    background-color: #0058cb;
+    color: #ffffff;
+}
+
+#ingresado {
+    background-color: #479027;
+    color: #ffffff;
+}
+
+#pre_ingresado {
+    background-color: #f5cf39;
+    color: #ffffff;
+}
+
+#en_transito {
+    background-color: #00c2cb;
+    color: #fff;
+}
+
+#mapid {
+    background-color: #d9deda;
+    position: absolute;
+    height: 350px;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0,0,0, .1);
+}
+
+.embarque .errorMsg {
+    text-align: center;
+    padding: 1.8rem 0;
+    color: rgb(144, 39, 39);
+    font-weight: bold;
+}

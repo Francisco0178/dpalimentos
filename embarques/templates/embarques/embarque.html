@@ -1,0 +1,103 @@
+{% extends "embarques/base.html" %}
+{% block content %}
+{% load humanize %}
+
+
+<div class="embarque">
+    <div class="swiper mapSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="superior">
+                    {% if status == "En Tránsito" %}
+                        <h2 id="en_transito" class="embstat">Estado: {{ status }}</h2>
+                    {% elif status == "Provisionado" %}
+                        <h2 id="provisionado" class="embstat">Estado: {{ status }}</h2>
+                    {% elif status == "Pre-Ingresado" %}
+                        <h2 id="pre_ingresado" class="embstat">Estado: {{ status }}</h2>
+                    {% elif status == "Ingresado" %}
+                        <h2 id="ingresado" class="embstat">Estado: {{ status }}</h2>
+                    {% endif %}
+                    <h1>{{ proveedor }} CTR N°{{ ctr }}</h1>
+                    <h1>Productos:</h1>
+                </div>
+                <div class="tableCtr">
+                    <table class="table table-striped tableProd">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Um</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for embarque in embarques %}
+                                {% if embarque.id == id %}
+                                <tr>
+                                    <td>{{ embarque.producto }}</td>
+                                    <td>{{ embarque.cantidad|intcomma }}</td>
+                                    <td>{{ embarque.um }}</td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableCtr">
+                    <table class="table table-striped tableProd">
+                        <thead>
+                            <th>Paletizada</th>
+                            <th>Tipo</th>
+                            <th>Sigla CTR</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ carga }}</td>
+                                <td>{{ tipo }}</td>
+                                <td>{{ siglaCtr }}</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tableCtr">
+                    <table class="table table-striped tableProd">
+                        <thead>
+                            <th>Fecha ETA</th>
+                            <th>Fecha Retiro</th>
+                            <th>Hora</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ eta }}</td>
+                                <td>{{ retiro }}</td>
+                                <td>{{ hora }}</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+                {% if idPl == "" %}
+                    <h1 class="errorMsg">Lista de Empaque no disponible</h1>
+                {% else %}
+                    <div class="descargar"><a href="{% url 'runCode' %}?id={{ id | urlencode }}">Descargar Lista de Empaque (PDF)</a></div>
+                {% endif %}
+            </div>
+            <div class="swiper-slide">
+                <div class="mapCtr">
+                    <h1>Ubicación de la Nave</h1>
+                    <div id="mapid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+    var mymap = L.map('mapid').setView([9.330548023470541, -79.83426659977704], 5);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+
+    const swiper = new Swiper(".mapSwiper", {});
+</script>
+
+{% endblock content %}

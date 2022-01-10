@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ingsoft-324618",
+  "private_key_id": "acd4d54552b91a853a8a394d387cbd38b915c711",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCw3C005hIrRpah\nep0M0ScN0crkFmojavlwGQjVfYRs7dl2iWV6peXY8X+fyC+XtF6rT7uwHsnVBFzO\nCBJdEshvxYONFCk4yFf3bql9ACcsMcnZJJYjMgidL3NExwDSu78LDpyiknz3lsa/\ng2P3sDEqQCZ2ZGosiUKtb1820wmU7no/Dkn52oNHF3VMOcr0cxmnzMFvONaWgR1i\npR/C7KSnID8nG+ftnZ3r2jTpE4PFgSm+B+BZH9g8rmZM3nx0WDNsIwWfpprC4kBz\nqx98JGrpnCBBmh2TnoKzGNuEqpOUiNwNubxIQFs8KOTeuTlf5NqIq/zlfrXVJCVu\ntO2uxIPfAgMBAAECggEAI8f30Wr2pBC86uCOo4gxGYenP6wVPyMmYfp+ogqp3wvj\n4ip8AGtN7C03v9DVaCDSwl/4PfKMrO8cA4b4iCIDsTFJoyJAEL/fpCycV7DPPA66\nopbXVTmLKpnt/S0xynC3fvou0GlIpSK5BQgFEphv6fdekLdSD76ZYdNVdRcPKjUa\nCluRnNf/tEEunQfN4F5FScBww9vlLAVTRUZtxedGxiqta1xr4q69Vcsa2iH0B4pz\nZmpvDbwLd8U3YWbjhxIpLHG53dmfnCumdAt2uF9Y0ZSVY5kTpO9qMdfLv5HM3q1X\nXJGG1l90Kcqk4Se+AMs9aeQxKigbEPvqTi5GNHaQcQKBgQD52VSKHoqaybsn4ieO\nZtabEk4vA3DuP0dc9qKQqoyylQU91o6UIjy21f4hUuVtbPvanJLCQEWJwZozl7Ot\nV41+aFdV2HPJo16bTDJdnTPlFF2ikC7xUU8S9TsGWp40b8M88qfHjf+DfqSAPfZP\nUvR/70lslX0kogPmJC8uXja7+QKBgQC1NtW6DnI+8cS9buPcg33Dak73+TJUqIBL\nz71g9n0qDegyBu9i1UVyZibSvztZN8j21uUD/Wop9ExhYbHxzx+KRnx2HUgkmBDt\nKIQTfMc4VWGS1NbT3lCcm46aHUtw9JN1onoOD6U2emhTfJYPPvrGqVc6o0ZWMZ7N\noAtKc1nElwKBgH9NLLXzOcwEXUfFA0KbQ11fxlZN+oxp0YKcZ9guDeIv66vGVn9D\nsou2HPX9tsg6b1jDzkMLXGMEMf13niUEJyPxJg6nateiVeHqwP7Ryk8+QTdDH6f1\nNcUDDj/+i/1LtL6pJLOYtkfZjxeIeqeQLOPCmDarNEgmBLaOWTvW5SyBAoGAfcnW\nihRFEZRZcPVsjkFoJyHANzlvynw8smM9nfT75RlKOI+/0+cfEc3+3QOJeuDSSyXY\nSvC5pO3Dp0Vdc/DGgAF1m7evwFceSMF7DNvsnhoGZRoBFYiYhF0mm6wCFiJvyZRD\nDUem8y39BRbSQzsAcK5Tsoxr4qEHDs0tiTyQ73kCgYBidnQ+KWtxxJxRVcXQpXAx\nSUZw7NyFDEEItwOCVsYPlXdN+XIfcQtuODKLeKKOxINYWPurYsS94n5717UiFSEm\nP2sRdmhv2IRkReJOr0T4Mb8DQNjpchuinU5ZcOo2QQlY1VpYmUwNFH/rGfh/kYGT\nxPMlrId/chzy5qxUGjIdlw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ingsoft@ingsoft-324618.iam.gserviceaccount.com",
+  "client_id": "107885599823615679446",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ingsoft%40ingsoft-324618.iam.gserviceaccount.com"
+}
